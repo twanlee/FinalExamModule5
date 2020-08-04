@@ -1,0 +1,25 @@
+<h1>My Library</h1>
+<hr>
+<button type="button" routerLink="/add" class="btn btn-outline-dark">Add new Book</button>
+<hr>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Title</th>
+    <th scope="col">Author</th>
+    <th scope="col">Update</th>
+    <th scope="col">Handle</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of bookList">
+    <th scope="row">{{book.id}}</th>
+    <td><a [routerLink]="[book.id,'book']">{{book.title}}</a></td>
+    <td>{{book.author}}</td>
+    <td><button class="btn btn-dark" [routerLink]="[book.id,'edit']">Edit</button></td>
+    <td><button class="btn btn-danger" (click)="delete(book.id)">Delete</button></td>
+  </tr>
+
+  </tbody>
+</table>

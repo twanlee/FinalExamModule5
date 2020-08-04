@@ -1,0 +1,28 @@
+<form [formGroup]="editBookForm" (ngSubmit)="update()">
+  <div class="form-group">
+    <label for="formGroupExampleInput">ID</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" disabled formControlName="id">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Title</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="title">
+    <div *ngIf="editBookForm.get('title').invalid && editBookForm.get('title').touched" style="color: red;">
+      Invalid field!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInpu3">Author</label>
+    <input type="text" class="form-control" id="formGroupExampleInpu3" formControlName="author">
+    <div *ngIf="editBookForm.get('author').invalid && editBookForm.get('author').touched" style="color: red;">
+      Invalid field!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInputx">Description</label>
+    <textarea  class="form-control" id="formGroupExampleInputx" formControlName="description"></textarea>
+    <div *ngIf="editBookForm.get('description').invalid && editBookForm.get('description').touched" style="color: red;">
+      Invalid field!
+    </div>
+  </div>
+  <button class="btn btn-dark">Update</button>
+</form>

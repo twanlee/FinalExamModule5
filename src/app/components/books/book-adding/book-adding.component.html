@@ -1,0 +1,24 @@
+<form [formGroup]="addBookForm" (ngSubmit)="addBook()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Title</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="title" placeholder="Enter title">
+    <div *ngIf="addBookForm.get('title').invalid && addBookForm.get('title').touched" style="color: red;">
+      Invalid field!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Author</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" formControlName="author" placeholder="Enter author">
+    <div *ngIf="addBookForm.get('author').invalid && addBookForm.get('author').touched" style="color: red;">
+      Invalid field!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword3">Description</label>
+    <textarea type="text" class="form-control" id="exampleInputPassword3" formControlName="description" placeholder="Enter Description"></textarea>
+    <div *ngIf="addBookForm.get('description').invalid && addBookForm.get('description').touched" style="color: red;">
+      Invalid field!
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
